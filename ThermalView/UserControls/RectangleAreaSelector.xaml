@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="ThermalView.UserControls.RectangleAreaSelector"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+
+    <UserControl.Resources>
+        <Style x:Key="HelperBorderStyle" TargetType="Border">
+            <Setter Property="CornerRadius" Value="4" />
+            <Setter Property="Padding" Value="5,2,5,2" />
+            <Setter Property="BorderThickness" Value="0.25,0.25,0.5,1" />
+            <Setter Property="BorderBrush" Value="#FF000000" />
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush Opacity="0.9" EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFC8C8C4" Offset="0.156"/>
+                        <GradientStop Color="#F0FFFFFF" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="SelectionRectStyle" TargetType="Rectangle">
+            <Setter Property="Stroke" Value="Blue" />
+            <Setter Property="Fill" Value="White" />
+            <Setter Property="Opacity" Value="0.5" />
+        </Style>
+    </UserControl.Resources>
+
+    <Grid x:Name="SelectionHolder" Background="Transparent"
+          HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+
+        <Rectangle x:Name="SelectedArea" HorizontalAlignment="Left" VerticalAlignment="Top"
+                   Style="{StaticResource SelectionRectStyle}"/>
+
+        <Popup x:Name="StartTextPopup" IsOpen="False">
+            <Border x:Name="StartTextBorder" Style="{StaticResource HelperBorderStyle}">
+                <TextBlock x:Name="StartText" />
+            </Border>
+        </Popup>
+
+        <Popup x:Name="EndTextPopup" IsOpen="False">
+            <Border x:Name="EndTextBorder" Style="{StaticResource HelperBorderStyle}" >
+                <TextBlock x:Name="EndText" />
+            </Border>
+        </Popup>
+
+        <Popup x:Name="CursorHolderPopup" IsOpen="False" />
+    </Grid>
+</UserControl>

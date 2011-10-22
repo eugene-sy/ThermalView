@@ -1,0 +1,27 @@
+﻿<Window x:Class="ThermalView.Views.AlertDialogs.WarningDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Warning Dialog" Height="180" Width="500">
+    <Grid>
+       <Grid Background="{DynamicResource ButtonBackgroundSolidBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="68"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto" MinHeight="20"/>
+        </Grid.RowDefinitions>
+        
+        <Image Source="..\..\Assets\Images/WarningImage.png" VerticalAlignment="top" HorizontalAlignment="Center" Margin="10"/>
+        <StackPanel Grid.Column="1" Margin="0,0,0,8">
+            <TextBlock x:Name="Alert" Margin="5"  Foreground="{DynamicResource TextBrush}">
+            	<TextBlock.Text>Внимание!</TextBlock.Text>
+            </TextBlock>
+            <TextBlock x:Name="AlertTex" Margin="5" Foreground="{DynamicResource TextBrush}" TextWrapping="WrapWithOverflow"/>
+        </StackPanel>
+        <Button x:Name="OKBtn" Content="OK" HorizontalAlignment="Right" VerticalAlignment="Center"
+                Grid.Row="1" Grid.Column="1" Width="75" Margin="5,2,25,2" Background="{DynamicResource ButtonBackgroundSolidBrush}" BorderBrush="{DynamicResource ButtonBorderBrush}" Foreground="{DynamicResource ButtonForegroundSolidBrush}" IsCancel="True" IsDefault="True"/>
+    </Grid> 
+    </Grid>
+</Window>
